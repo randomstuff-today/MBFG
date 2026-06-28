@@ -1,3 +1,6 @@
 baseURL = "https://marcusbriggsfraudguard.org/"
 languageCode = "en-GB"
 title = "Marcus Briggs Fraud Guard"
+
+[markup.goldmark.renderer]
+unsafe = true
