@@ -18,7 +18,7 @@
 <div class="page-wrapper">
 
     {{ partial "header.html" . }}
-    {{ partial "mandate.html" . }}
+   {{ if not .IsHome }}{{ partial "mandate.html" . }}{{ end }}
 
     {{ block "main" . }}{{ end }}
 
