@@ -505,7 +505,7 @@ footer p {
 /* ------ Footer (expanded) ------ */
 .footer-nav-links {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 32px;
     padding-bottom: 28px;
     border-bottom: 1px solid #1e1e1a;
