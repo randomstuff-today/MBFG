@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} – {{ .Site.Title }}{{ end }}</title>
+    {{ with .Params.description }}<meta name="description" content="{{ . }}" />{{ end }}
+    {{ with .Permalink }}<link rel="canonical" href="{{ . }}" />{{ end }}
+    {{ with .Params.og_title }}<meta property="og:title" content="{{ . }}" />{{ end }}
+    {{ with .Params.description }}<meta property="og:description" content="{{ . }}" />{{ end }}
+    <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <meta name="robots" content="index, follow" />
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+<div class="page-wrapper">
+
+    {{ partial "header.html" . }}
+    {{ partial "mandate.html" . }}
+
+    {{ block "main" . }}{{ end }}
+
+    {{ partial "footer.html" . }}
+
+</div>
+
+</body>
+</html>

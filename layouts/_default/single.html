@@ -1,0 +1,19 @@
+{{ define "main" }}
+
+<section class="page-hero">
+    <div class="container">
+        {{ with .Parent }}<div class="breadcrumb"><a href="/">Home</a> / <a href="{{ .Permalink }}">{{ .Title }}</a> / {{ $.Title }}</div>{{ else }}<div class="breadcrumb"><a href="/">Home</a> / {{ .Title }}</div>{{ end }}
+        <h1>{{ .Title }}</h1>
+        {{ with .Params.subhead }}<p class="subhead">{{ . }}</p>{{ end }}
+        {{ with .Params.intro }}<p class="meta-description">{{ . }}</p>{{ end }}
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        {{ .Content }}
+        <a href="{{ with .Parent }}{{ .Permalink }}{{ else }}/{{ end }}" class="back-link">← Back</a>
+    </div>
+</section>
+
+{{ end }}

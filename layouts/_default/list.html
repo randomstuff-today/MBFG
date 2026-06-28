@@ -1,0 +1,35 @@
+{{ define "main" }}
+
+<section class="page-hero">
+    <div class="container">
+        <div class="breadcrumb"><a href="/">Home</a> / {{ .Title }}</div>
+        <h1>{{ .Title }}</h1>
+        {{ with .Params.subhead }}<p class="subhead">{{ . }}</p>{{ end }}
+        {{ with .Params.intro }}<p class="meta-description">{{ . }}</p>{{ end }}
+    </div>
+</section>
+
+{{ if .Content }}
+<section class="content-section">
+    <div class="container">
+        {{ .Content }}
+    </div>
+</section>
+{{ end }}
+
+{{ if .Pages }}
+<section class="articles-section">
+    <div class="container">
+        <h2>Articles in this section</h2>
+        <div class="article-list">
+            {{ range .Pages }}
+            <div class="article-item">
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}
+
+{{ end }}
